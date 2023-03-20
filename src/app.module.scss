@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap");
+
+// Colors
+$neon-green: #a4ffaf;
+$almost-white: #e6e5ea;
+$grey: #817d92;
+$dark-grey: #24232c;
+//
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #08070b;
+}
+
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 16px;
+  gap: 16px;
+  .generator {
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: $grey;
+  }
+
+  .generator-head {
+    background-color: $dark-grey;
+    padding: 17px 15.5px 15px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 540px;
+    max-height: 80px;
+    span {
+      font-size: 24px;
+      line-height: 32px;
+      color: $almost-white;
+    }
+    img {
+      width: 17.5px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .generator-main {
+    width: 100%;
+    padding: 16px;
+    background-color: $dark-grey;
+    max-width: 540px;
+    max-height: 528px;
+    .character-length {
+      flex-direction: column;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 16px;
+      .character-length-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+          font-size: 16px;
+          color: $almost-white;
+        }
+        span {
+          color: $neon-green;
+          font-size: 24px;
+        }
+      }
+      .input-slider-wrap {
+        position: relative;
+        .inputSlider {
+          -webkit-appearance: none;
+          width: 100%;
+          outline: none;
+          height: 8px;
+          background: #18171f;
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #e6e5ea;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            z-index: 3;
+            position: relative;
+          }
+        }
+        .sliderPercent {
+          background-color: #a4ffaf;
+          width: 100%;
+          height: 8px;
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 50%;
+        }
+      }
+    }
+
+    .password-settings {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      .setting {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .checkbox {
+          width: 20px;
+          height: 20px;
+          border: 2px solid #e6e5ea;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            display: none;
+          }
+          cursor: pointer;
+        }
+        span {
+          font-size: 16px;
+          line-height: 21px;
+          color: $almost-white;
+        }
+      }
+    }
+
+    .password-strength {
+      margin-top: 32px;
+      padding: 14px 16px;
+      background-color: #18171f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h2 {
+        font-size: 16px;
+        line-height: 21px;
+        color: $grey;
+      }
+      .strength-indicator {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        span {
+          font-size: 18px;
+          line-height: 24px;
+          color: $almost-white;
+        }
+        .strength-icon-wrap {
+          display: flex;
+          gap: 8px;
+          .rectangle {
+            border: 2px solid #e6e5ea;
+            width: 10px;
+            height: 28px;
+          }
+        }
+      }
+    }
+  }
+
+  .generate {
+    background: #a4ffaf;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: $dark-grey;
+    font-family: "JetBrains Mono";
+    font-size: 16px;
+    line-height: 21px;
+    text-transform: uppercase;
+    margin-top: 16px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width:1440px) {
+    .mainBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 133px;
+        // .generator-head{
+        //     width: 540px;
+        //     height: 80px;
+        //     display: flex;
+        //     align-items: center;
+        //     padding: unset;
+        //     padding: 0 32px;
+        //     span{
+        //         font-size: 32px;
+        //     }
+        //     img{
+        //         width: 21px;
+        //         height: 24px;
+        //     }
+        // }
+        // .generator-main{
+        //     width: 540px;
+        // }
+    }
+}

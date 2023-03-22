@@ -1,7 +1,11 @@
 import styles from "./app.module.scss";
+import React, { useState } from 'react';
 
 const App = () => {
-  
+
+  const [value, setValue] = useState(10);
+
+  const width = `${value * 5}%`;
 
   return (
     <div className={styles["mainBody"]}>
@@ -19,12 +23,20 @@ const App = () => {
 
           <div className={styles["character-length-wrap"]}>
             <h3>Character Length</h3>
-            <span className={styles["length-number"]}>10</span>
+            <span className={styles["length-number"]}>{value}</span>
           </div>
 
           <div className={styles["input-slider-wrap"]}>
-            <input className={styles["inputSlider"]} type="range" min="1" max="20" value="10" step="1"></input>
-            <div className={styles["sliderPercent"]}></div>
+            <input className={styles["inputSlider"]} 
+                type="range"
+                min="1"
+                max="20"
+                value={value}
+                step="1"
+                onChange={(event) => setValue(event.target.value)}
+                >
+                </input>
+                <div className={styles["sliderPercent"]} style={{ width }}></div>
           </div>
 
         </div>

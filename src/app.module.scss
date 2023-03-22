@@ -41,6 +41,16 @@ body {
     width: 100%;
     max-width: 540px;
     max-height: 80px;
+    div{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      h2{
+        color: $neon-green;
+        font-size: 18px;
+        display: none;
+      }
+    }
     span {
       font-size: 24px;
       line-height: 32px;

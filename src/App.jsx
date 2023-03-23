@@ -1,5 +1,9 @@
 import styles from "./app.module.scss";
 import React, { useState } from 'react';
+import buttonArrow from "./assets/images/icon-arrow-right.svg";
+import checkIcon from "./assets/images/icon-check.svg";
+import copyIcon from "./assets/images/icon-copy.svg";
+
 
 const App = () => {
 
@@ -78,13 +82,13 @@ const strengthName = isTooWeak ? "TOO WEAK!" : isWeak ? "Weak" : medium ? "MEDIU
   return (
     <div className={styles["mainBody"]}>
 
-      <h1 className={styles["generator"]}>Password Generator</h1>
+      <h1 className={styles["generator"]}>Password Generator</h1>s
 
       <div className={styles["generator-head"]}>
         <span className={styles["password-generated"]}>{password}</span>
         <div>
         {textCopied ? <h2 className={styles["copiedSpan"]}>COPIED</h2> : ""}
-        <img src="./assets/images/icon-copy.svg" alt="copyIcon" onClick={() => {
+        <img src={copyIcon} alt="copyIcon" onClick={() => {
           navigator.clipboard.writeText(password);
           setTextCopied(!textCopied);
           setTimeout(() => {
@@ -122,28 +126,28 @@ const strengthName = isTooWeak ? "TOO WEAK!" : isWeak ? "Weak" : medium ? "MEDIU
 
           <div className={styles.setting} id={styles.upperCase}>
             <div className={`${styles.checkbox} ${checkUpper ? styles.active : ""}`} onClick={() => setCheckUpper(!checkUpper)}>
-              {checkUpper ?<img src="./assets/images/icon-check.svg" alt="checkimg" /> : null} 
+              {checkUpper ?<img src={checkIcon} alt="checkimg" /> : null} 
             </div>
             <span>Include Uppercase Letters</span>
           </div>
 
           <div className={styles.setting} id={styles.lowerCase}>
             <div className={`${styles.checkbox} ${checkLower ? styles.active : ""}`} onClick={() => setCheckLower(!checkLower)} >
-            {checkLower ?<img src="./assets/images/icon-check.svg" alt="checkimg" /> : null} 
+            {checkLower ?<img src={checkIcon} alt="checkimg" /> : null} 
             </div>
             <span>Include Lowercase Letters</span>
           </div>
 
           <div className={styles.setting} id={styles["includeNumbers"]}>
             <div className={`${styles.checkbox} ${checkNumbers ? styles.active : ""}`} onClick={() => setCheckNumbers(!checkNumbers)} >
-            {checkNumbers ? <img src="./assets/images/icon-check.svg" alt="checkimg" /> : null} 
+            {checkNumbers ? <img src={checkIcon} alt="checkimg" /> : null} 
             </div>
             <span>Include Numbers</span>
           </div>
 
           <div className={styles.setting} id={styles["includeSymbols"]}>
             <div className={`${styles.checkbox} ${checkSymbols ? styles.active : ""}`} onClick={() => setCheckSymbols(!checkSymbols)} >
-            {checkSymbols ? <img src="./assets/images/icon-check.svg" alt="checkimg" /> : null} 
+            {checkSymbols ? <img src={checkIcon} alt="checkimg" /> : null} 
             </div>
             <span>Include Symbols</span>
           </div>
@@ -166,7 +170,7 @@ const strengthName = isTooWeak ? "TOO WEAK!" : isWeak ? "Weak" : medium ? "MEDIU
         <button className={styles.generate} onClick={handleClick}>
           generate
           <img
-            src="./assets/images/icon-arrow-right.svg"
+            src={buttonArrow}
             alt="buttonIconRight"
           />
         </button>

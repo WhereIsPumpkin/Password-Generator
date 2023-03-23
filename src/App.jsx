@@ -69,10 +69,10 @@ function handleClick() {
 }
 
 // Too Weak
-const isTooWeak = (password.length < 10 && activePasswordSettingAmount < 2) || (password.length >= 10 && activePasswordSettingAmount < 1);
-const isWeak = password.length < 10 && activePasswordSettingAmount === 2 || (password.length > 10 && activePasswordSettingAmount === 1 );
-const medium = password.length < 10 && activePasswordSettingAmount > 2 || (password.length > 10 && activePasswordSettingAmount > 1 && activePasswordSettingAmount <4);
-const strong = password.length > 10 && activePasswordSettingAmount === 4;
+const isTooWeak = (value <= 10 && activePasswordSettingAmount < 2 ) || (value > 10 && activePasswordSettingAmount < 1);
+const isWeak = value <= 10 && activePasswordSettingAmount === 2 || (value > 10 && activePasswordSettingAmount === 1 );
+const medium = value <= 10 && activePasswordSettingAmount > 2  || (value > 10 && activePasswordSettingAmount > 1 && activePasswordSettingAmount < 4);
+const strong = value > 10 && activePasswordSettingAmount === 4;
 
 const rectangleClassName = isTooWeak ? styles.tooWeak : isWeak ? styles.weak : medium ? styles.medium : styles.strong;
 

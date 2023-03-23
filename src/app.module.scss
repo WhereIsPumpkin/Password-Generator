@@ -41,6 +41,7 @@ body {
     width: 100%;
     max-width: 540px;
     max-height: 80px;
+    height: 53px;
     div{
       display: flex;
       align-items: center;
@@ -48,7 +49,6 @@ body {
       h2{
         color: $neon-green;
         font-size: 18px;
-        display: none;
       }
     }
     span {
@@ -91,6 +91,7 @@ body {
         position: relative;
         .inputSlider {
           -webkit-appearance: none;
+          appearance: none;
           width: 100%;
           outline: none;
           height: 8px;
@@ -136,10 +137,12 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          img {
-            display: none;
-          }
           cursor: pointer;
+          
+        }
+        .active{
+          background-color: $neon-green;
+          border: none;
         }
         span {
           font-size: 16px;
@@ -178,6 +181,22 @@ body {
             width: 10px;
             height: 28px;
           }
+          .tooWeak{
+            background:#F64A4A;
+            border: none;
+          }
+          .weak{
+            background: #FB7C58;
+            border: none;
+          }
+          .medium{
+            background: #F8CD65;
+            border: none;
+          }
+          .strong{
+            background: #A4FFAF;  
+            border: none;        
+          }
         }
       }
     }
@@ -208,23 +227,5 @@ body {
         flex-direction: column;
         align-items: center;
         padding-top: 133px;
-        // .generator-head{
-        //     width: 540px;
-        //     height: 80px;
-        //     display: flex;
-        //     align-items: center;
-        //     padding: unset;
-        //     padding: 0 32px;
-        //     span{
-        //         font-size: 32px;
-        //     }
-        //     img{
-        //         width: 21px;
-        //         height: 24px;
-        //     }
-        // }
-        // .generator-main{
-        //     width: 540px;
-        // }
     }
 }
